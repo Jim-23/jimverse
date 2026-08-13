@@ -1,4 +1,4 @@
-# The Jimverse
+# Jimverse
 
 Source code for [jimverse.dev].
 

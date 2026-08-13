@@ -1,0 +1,20 @@
+[
+    {
+        "id": "monbit",
+        "name": "Monbit",
+        "description": "A tiny e-ink Tamagotchi-like device built around an ESP32.",
+        "status": "active",
+        "about": "Monbit is a personal project created to learn embedded development, hardware prototyping, and product design. The goal is not only to create a device, but also to explore the full product development process. From firmware and electronics to CAD design and physical prototype.",
+        "url": "/projects/monbit/",
+        "repository": "https://github.com/Jim-23/monbit"
+    },
+    {
+        "id": "pyiconlaser",
+        "name": "pyiconlaser",
+        "description": "Python wrapper for the TYKMA ICON Interface HTTP/TCPIP API used by industrial laser marking systems.",
+        "status": "stable",
+        "about": "This project started from a real production need: integrating a TYKMA laser marking system into a Python workflow. Instead of repeatedly working with the HTTP/TCPIP and it's quirks, I wanted to create a clean, reusable Python library that could also be useful for similar integrations in the future.",
+        "url": "/projects/pyiconlaser/",
+        "repository": "https://github.com/Jim-23/pyiconlaser"
+    }
+]

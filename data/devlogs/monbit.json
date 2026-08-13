@@ -1,0 +1,370 @@
+[
+    {
+        "title": "v0.0.1",
+        "date": "2026-06-18",
+        "version": "0.0.1",
+        "items": [
+            "ESP32 configured",
+            "E-Ink display working",
+            "First UI rendered",
+            "Yes, I know, I soldered the pins in the wrong direction. I fixed it later."
+        ],
+        "images": [
+            {
+                "src": "photos/display-esp-wiring.jpg",
+                "alt": "ESP32 to display wiring"
+            },
+            {
+                "src": "photos/dispalay_plugged_in.jpg",
+                "alt": "Display plugged in"
+            },
+            {
+                "src": "photos/first_screen_text.jpg",
+                "alt": "First screen text"
+            },
+            {
+                "src": "photos/firstUI.jpg",
+                "alt": "First UI rendered"
+            }
+        ]
+    },
+    {
+        "title": "Front lid Prototype 1",
+        "date": "2026-06-18",
+        "items": [
+            "First enclosure top cover printed",
+            "Learned enclosure is too small for PCB",
+            "Screw holes tested, quite small"
+        ],
+        "images": [
+            {
+                "src": "photos/many_tries_of_front_panel.jpg",
+                "alt": "Many tries of the front panel"
+            },
+            {
+                "src": "photos/first_front_panel-front.jpg",
+                "alt": "First front panel - front"
+            },
+            {
+                "src": "photos/first_front_panel-back.jpg",
+                "alt": "First front panel - back"
+            }
+        ]
+    },
+    {
+        "title": "Front lid Prototype 2",
+        "date": "2026-06-19",
+        "items": [
+            "Fits well, but it sits on top of the PCB and needs to be made slightly over the edge."
+        ],
+        "images": []
+    },
+    {
+        "title": "Front lid Prototype 3",
+        "date": "2026-06-19",
+        "items": [
+            "Fits well, but I still need to adjust the back part to have a good grid for the PCB and edges."
+        ],
+        "images": []
+    },
+    {
+        "title": "Front lid Prototype 4",
+        "date": "2026-06-19",
+        "items": [
+            "Almost perfect, maybe I will adjust the size a bit more.",
+            "In the future, I might make it deeper."
+        ],
+        "images": [
+            {
+                "src": "photos/4th_fron_panel-front.jpg",
+                "alt": "Fourth front panel - front"
+            },
+            {
+                "src": "photos/4th_front_panel-back.jpg",
+                "alt": "Fourth front panel - back"
+            }
+        ]
+    },
+    {
+        "title": "First button",
+        "date": "2026-06-21",
+        "items": [
+            "First button input succeeded!",
+            "And don't forget: BUTTONS HAVE ORIENTATION!",
+            "Then I connected the display as well and added a function which refreshes the display.",
+            "When I click the button, the screen refreshes."
+        ],
+        "code": [
+            "BUTTON PRESSED",
+            "BUTTON RELEASED"
+        ],
+        "images": [
+            {
+                "src": "photos/first_button.jpg",
+                "alt": "First button - works"
+            },
+            {
+                "src": "photos/display_refreshes_when_clicked.jpg",
+                "alt": "Display refresh"
+            }
+        ]
+    },
+    {
+        "title": "v0.0.2",
+        "date": "2026-06-21",
+        "version": "0.0.2",
+        "items": [
+            "First button connected to pin 0",
+            "GUI refreshment",
+            "Renamed happiness to fun so in GUI it is displayed as F instead of a second H"
+        ],
+        "images": []
+    },
+    {
+        "title": "Button functions",
+        "date": "2026-06-27",
+        "items": [
+            "The button now feeds the monster by 10 until hunger is back to 0."
+        ],
+        "images": [
+            {
+                "src": "photos/feed_btn_hungry.jpg",
+                "alt": "Button State - hungry"
+            },
+            {
+                "src": "photos/feed_btn_less_hungry.jpg",
+                "alt": "Button State - less hungry"
+            }
+        ]
+    },
+    {
+        "title": "New GUI",
+        "date": "2026-06-21",
+        "items": [
+            "I updated the GUI to look a bit cleaner and polished. Obviously, it is not final yet.",
+            "I also had to rename happiness to fun so there are not two H values displayed; it was quite confusing.",
+            "I am considering changing it later to something like HUN, ENG, FUN, AGE or just using icons."
+        ],
+        "images": [
+            {
+                "src": "photos/gui_update_0.jpg",
+                "alt": "New GUI"
+            }
+        ]
+    },
+    {
+        "title": "Three buttons connected",
+        "date": "2026-06-21",
+        "items": [
+            "Connected two more buttons and added them on pins 8, 9 and 10.",
+            "The old Feed button was removed, and currently the code only prints which button was pressed: LEFT, MIDDLE or RIGHT.",
+            "The breadboard is a mess, I know, but it will eventually be better.",
+            "Left button feeds the monster: hunger decreases by 10.",
+            "Middle button plays with the monster: fun increases by 10, hunger increases by 10, and energy decreases by 5.",
+            "Right button makes the monster sleep: fun decreases by 5, hunger increases by 5, and energy increases by 10."
+        ],
+        "images": [
+            {
+                "src": "photos/buttons_connected_3.jpg",
+                "alt": "3 Buttons"
+            }
+        ]
+    },
+    {
+        "title": "v0.0.3",
+        "date": "2026-06-28",
+        "version": "0.0.3",
+        "items": [
+            "Added flash storage system",
+            "It was quite easy actually, so I am happy about that.",
+            "Saving is performed after a button is pressed.",
+            "I would also like to add an autosave every 5 minutes."
+        ],
+        "images": []
+    },
+    {
+        "title": "v0.0.4 - Audio System",
+        "date": "2026-07-11",
+        "version": "0.0.4",
+        "items": [
+            "Soldered speaker to MAX98357A amplifier.",
+            "Wired amplifier to ESP32-C3.",
+            "Created audio module (audio.hpp and audio.cpp).",
+            "The speaker produces buzz instead of a clear tone and I have no idea why; maybe the I2S config is wrong."
+        ],
+        "table": {
+            "headers": [
+                "MAX98357A",
+                "ESP32-C3"
+            ],
+            "rows": [
+                [
+                    "VIN",
+                    "3.3V"
+                ],
+                [
+                    "GND",
+                    "GND"
+                ],
+                [
+                    "DIN",
+                    "GPIO0"
+                ],
+                [
+                    "BCLK",
+                    "GPIO1"
+                ],
+                [
+                    "LRC (WS)",
+                    "GPIO20"
+                ],
+                [
+                    "SD",
+                    "-"
+                ],
+                [
+                    "GAIN",
+                    "-"
+                ],
+                [
+                    "SPK+",
+                    "Speaker +"
+                ],
+                [
+                    "SPK-",
+                    "Speaker -"
+                ]
+            ]
+        },
+        "images": []
+    },
+    {
+        "title": "Audio update",
+        "date": "2026-07-13",
+        "items": [
+            "Finally managed to implement clear sound with a specific configuration.",
+            "The problem was not the hardware but the audio config; wiring can stay as it is.",
+            "You can hear one beep sound when you power the device."
+        ],
+        "images": [
+            {
+                "src": "photos/speaker_connection.jpg",
+                "alt": "Speaker connection + spaghetti monster"
+            }
+        ]
+    },
+    {
+        "title": "v0.0.5",
+        "date": "2026-07-14",
+        "version": "0.0.5",
+        "items": [
+            "I decided to switch to a new ESP32 module, the ESP32-S3, mostly because of the extra GPIO pins I will need for the accelerometer.",
+            "Currently waiting for the module to arrive (approx. 2 weeks)."
+        ],
+        "images": []
+    },
+    {
+        "title": "UI and Menu System",
+        "date": null,
+        "items": [
+            "Added a basic menu when the middle button is pressed.",
+            "The user can navigate using the left button, right button and middle button to confirm."
+        ],
+        "images": [
+            {
+                "src": "photos/menu_selection_v0.jpg",
+                "alt": "What's on menu for today v0"
+            }
+        ]
+    },
+    {
+        "title": "Menu system update",
+        "date": "2026-07-24",
+        "items": [
+            "Added a more polished menu system and made the code more readable and organized.",
+            "Settings are still mock, but I will implement them later. The user should be able to turn off the sound and change the monster name.",
+            "Next focus is monster logic."
+        ],
+        "images": []
+    },
+    {
+        "title": "v0.0.6",
+        "date": "2026-07-24",
+        "version": "0.0.6",
+        "items": [
+            "Added basic monster logic; the monster has different states and moods.",
+            "States: None, Playing, Eating, Sleeping, Dizzy, Sick, Injured, Dead.",
+            "Moods: Happy, Normal, Hungry, Tired, Bored, Sad, Critical.",
+            "It still needs testing. Not all states are implemented yet; for example, Dizzy logic will be added when the accelerometer is added."
+        ],
+        "images": [
+            {
+                "src": "photos/mood_normal.jpg",
+                "alt": "Moods and everything - Normal"
+            },
+            {
+                "src": "photos/mood_happy.jpg",
+                "alt": "Moods and everything - Happy"
+            },
+            {
+                "src": "photos/mood_sad.jpg",
+                "alt": "Moods and everything - Sad"
+            },
+            {
+                "src": "photos/status_hungry.jpg",
+                "alt": "Status and everything - Hungry"
+            },
+            {
+                "src": "photos/status_sleeping.jpg",
+                "alt": "Status and everything - Sleeping"
+            }
+        ]
+    },
+    {
+        "title": "Species",
+        "date": null,
+        "items": [
+            "I am trying to add species, starting with Slime and Blob."
+        ],
+        "images": []
+    },
+    {
+        "title": "New menu entry",
+        "date": "2026-07-26",
+        "items": [
+            "Added a new menu entry, Info, which displays more information about the monster itself: Name, Species and Status.",
+            "The status is currently None because the monster is alive and healthy. I don't want to show short-term status there, only long-term ones.",
+            "In the future I want to add an option to reset the monster.",
+            "I also increased the sleep and entertainment gain because it was too low."
+        ],
+        "images": [
+            {
+                "src": "photos/menu_selection_v1.jpg",
+                "alt": "What's on menu for today v1"
+            },
+            {
+                "src": "photos/monster_info.jpg",
+                "alt": "Monster info"
+            }
+        ]
+    },
+    {
+        "title": "New ESP board struggle",
+        "date": "2026-08-12",
+        "items": [
+            "It has been some time since I last worked on this project, but the new ESP finally arrived!",
+            "I tried switching to the new ESP32-S3 Super Mini board, but what a pain that was!",
+            "After about 3 hours of debugging, arguing with ChatGPT, and almost losing my mind, I ended up creating a custom configuration for this board since none of the available ESP32-S3 configs in PlatformIO were working.",
+            "The best part is that it works! Or at least I can see the === MONBIT === log.",
+            "The question is whether it's going to work with all the peripherals connected, but that's a TODO for now."
+        ],
+        "quote": "Just a quick note: I wanted to use AI as little as possible, but yeah... here we go.",
+        "links": [
+            {
+                "label": "ESP32-S3 Super Mini config for PlatformIO",
+                "url": "https://github.com/Jim-23/esp32-s3-super-mini-platformio"
+            }
+        ],
+        "images": []
+    }
+]

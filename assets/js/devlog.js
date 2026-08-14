@@ -18,12 +18,7 @@ async function loadDevlog() {
         entries = await loadAllDevlogs();
     }
 
-    entries.sort((a, b) => {
-        if (!a.date) return 1;
-        if (!b.date) return -1;
-
-        return new Date(b.date) - new Date(a.date);
-    });
+    entries.sort(compareDevlogEntries);
 
     renderDevlog(container, entries);
 }
@@ -35,12 +30,8 @@ async function loadLatestDevlog() {
         return [];
     }
 
-    const latestEntry = entries.reduce((latest, entry) => {
-        if (!entry.date) return latest;
-        if (!latest.date) return entry;
-
-        return new Date(entry.date) > new Date(latest.date) ? entry : latest;
-    });
+    const sortedEntries = [...entries].sort(compareDevlogEntries);
+    const latestEntry = sortedEntries[0];
     
     // return latest entry in an array to keep the same structure as other functions
     return [latestEntry];
@@ -85,6 +76,45 @@ async function loadAllDevlogs() {
     );
 
     return devlogs.flat();
+}
+
+function getEntryTimestamp(entry) {
+    if (entry.createdAt) {
+        const createdAtTimestamp = Date.parse(entry.createdAt);
+        if (!Number.isNaN(createdAtTimestamp)) {
+            return createdAtTimestamp;
+        }
+    }
+
+    if (entry.date) {
+        const dateTimestamp = Date.parse(entry.date);
+        if (!Number.isNaN(dateTimestamp)) {
+            return dateTimestamp;
+        }
+    }
+
+    return Number.NEGATIVE_INFINITY;
+}
+
+function getEntryOrder(entry) {
+    return Number.isFinite(entry.order) ? entry.order : 0;
+}
+
+function compareDevlogEntries(a, b) {
+    const timestampDiff = getEntryTimestamp(b) - getEntryTimestamp(a);
+    if (timestampDiff !== 0) {
+        return timestampDiff;
+    }
+
+    const orderDiff = getEntryOrder(b) - getEntryOrder(a);
+    if (orderDiff !== 0) {
+        return orderDiff;
+    }
+
+    return String(b.version || "").localeCompare(String(a.version || ""), undefined, {
+        numeric: true,
+        sensitivity: "base"
+    });
 }
 
 function resolveDevlogImageSrc(entry, imageSrc) {

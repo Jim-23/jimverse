@@ -2,6 +2,8 @@
     {
         "title": "Hello Jimverse",
         "date": "2026-08-13",
+        "createdAt": "2026-08-13T09:00:00Z",
+        "order": 1,
         "version": "1.0.0",
         "items": [
             "Init of the website",
@@ -14,6 +16,8 @@
     {
         "title": "Polishing and settling",
         "date": "2026-08-14",
+        "createdAt": "2026-08-14T10:00:00Z",
+        "order": 1,
         "version": "1.0.1",
         "items": [
             "Code cleanup",
@@ -25,6 +29,8 @@
     {
         "title": "Let there be light, or dark",
         "date": "2026-08-14",
+        "createdAt": "2026-08-14T18:00:00Z",
+        "order": 2,
         "version": "1.0.2",
         "items": [
             "Introducing dark/light theme",

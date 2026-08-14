@@ -15,10 +15,13 @@ async function loadDevlog() {
 
     let entries = [];
 
-    if (project === "all") {
-        entries = await loadAllDevlogs(basePath);
-    } else {
+    if (project === "latest") {
+        // load the latest devlog entry from all projects
+        entries = await loadLatestDevlog(basePath);
+    } else if (project && project !== "all") {
         entries = await loadProjectDevlog(project, basePath);
+    } else {
+        entries = await loadAllDevlogs(basePath);
     }
 
     entries.sort((a, b) => {
@@ -28,6 +31,35 @@ async function loadDevlog() {
         return new Date(b.date) - new Date(a.date);
     });
 
+    renderDevlog(container, entries);
+}
+
+async function loadLatestDevlog(basePath = getDataBasePath()) {
+    const entries = await loadAllDevlogs(basePath);
+
+    if (!entries.length) {
+        return [];
+    }
+
+    const latestEntry = entries.reduce((latest, entry) => {
+        if (!entry.date) return latest;
+        if (!latest.date) return entry;
+
+        return new Date(entry.date) > new Date(latest.date) ? entry : latest;
+    });
+    
+    // return latest entry in an array to keep the same structure as other functions
+    return [latestEntry];
+}
+
+async function loadLatestDevlogSection() {
+    const container = document.querySelector("#latest-devlog");
+
+    if (!container) {
+        return;
+    }
+
+    const entries = await loadLatestDevlog(getDataBasePath());
     renderDevlog(container, entries);
 }
 
@@ -61,6 +93,24 @@ async function loadAllDevlogs(basePath = getDataBasePath()) {
     return devlogs.flat();
 }
 
+function resolveDevlogImageSrc(entry, imageSrc) {
+    if (!imageSrc) {
+        return "";
+    }
+
+    // Keep absolute/data URLs untouched.
+    if (/^(https?:)?\/\//.test(imageSrc) || imageSrc.startsWith("/") || imageSrc.startsWith("data:")) {
+        return imageSrc;
+    }
+
+    // Relative paths in JSON (for example "photos/x.jpg") are project-scoped.
+    if (entry?.project) {
+        return `${getDataBasePath()}/projects/${entry.project}/${imageSrc}`;
+    }
+
+    return imageSrc;
+}
+
 function renderDevlog(container, entries) {
     if (!entries.length) {
         container.innerHTML = "<p>No entries yet.</p>";
@@ -73,8 +123,8 @@ function renderDevlog(container, entries) {
                 ? `<time datetime="${entry.date}">${entry.date}</time>`
                 : ""
             }
-
-            <h3>${entry.title}</h3>
+            <h3>${entry.project ? `<a href="${getDataBasePath()}/projects/${entry.project}/">${entry.project}</a>` : "General"}</h3>
+            <h4>${entry.title}</h4>
 
             ${entry.items
                 ? `
@@ -89,7 +139,7 @@ function renderDevlog(container, entries) {
                 ? `
                     <div class="image-grid">
                         ${entry.images.map(image => `
-                            <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                            <img src="${resolveDevlogImageSrc(entry, image.src)}" alt="${image.alt}" loading="lazy">
                         `).join("")}
                     </div>
                 `
@@ -100,3 +150,4 @@ function renderDevlog(container, entries) {
 }
 
 loadDevlog();
+loadLatestDevlogSection();

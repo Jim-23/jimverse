@@ -16,5 +16,14 @@
         "about": "This project started from a real production need: integrating a TYKMA laser marking system into a Python workflow. Instead of repeatedly working with the HTTP/TCPIP and it's quirks, I wanted to create a clean, reusable Python library that could also be useful for similar integrations in the future.",
         "url": "/projects/pyiconlaser/",
         "repository": "https://github.com/Jim-23/pyiconlaser"
+    },
+    {
+        "id": "jimverse-web",
+        "name": "Jimverse web",
+        "description": "My personal internet corner for tinkering around.",
+        "status": "active",
+        "about": "I have decided that it's time to own a website but I wanted to own it, so I went with classic html-css-js style, no frameworks so far",
+        "url": "/projects/jimverse-web",
+        "repository": "https://github.com/Jim-23/jimverse"
     }
 ]

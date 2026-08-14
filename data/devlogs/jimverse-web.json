@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Hello Jimverse",
+        "date": "2026-08-13",
+        "version": "0.0.1",
+        "items": [
+            "Init of the website",
+            "Bought a domain",
+            "Made simple design with the help of Claude",
+            "On Raspberry pi 4 I have setup Cloudflare and made the site accessible from outside!"
+        ],
+        "images": []
+    },
+    {
+        "title": "Polishing and settling",
+        "date": "2026-08-14",
+        "version": "0.0.2",
+        "items": [
+            "Time to do some polishing, cleanup",
+            "Added Jimverse as another project",
+            "Will add more in the future, hopefully"
+        ]
+    
+    }
+]

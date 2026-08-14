@@ -2,7 +2,7 @@
     {
         "title": "Hello Jimverse",
         "date": "2026-08-13",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "items": [
             "Init of the website",
             "Bought a domain",
@@ -14,12 +14,24 @@
     {
         "title": "Polishing and settling",
         "date": "2026-08-14",
-        "version": "0.0.2",
+        "version": "1.0.1",
         "items": [
-            "Time to do some polishing, cleanup",
+            "Code cleanup",
             "Added Jimverse as another project",
-            "Will add more in the future, hopefully"
+            "Will add more in the future, hopefully ..."
         ]
     
+    },
+    {
+        "title": "Let there be light, or dark",
+        "date": "2026-08-14",
+        "version": "1.0.2",
+        "items": [
+            "Introducing dark/light theme",
+            "Added sun and moon icon, want to draw my own in the future",
+            "Still thinking about the design, I don't want to make it too complicated",
+            "It still works, yay!"
+        ],
+        "images": []
     }
 ]

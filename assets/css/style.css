@@ -39,12 +39,7 @@ html {
 body {
     margin: 0;
 
-    background:
-        radial-gradient(
-            circle at top,
-            var(--surface-soft) 0,
-            var(--bg) 420px
-        );
+    background: var(--bg);
 
     color: var(--text);
 

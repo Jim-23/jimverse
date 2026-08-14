@@ -1,8 +1,3 @@
-function getDataBasePath() {
-    const depth = window.location.pathname.split('/').filter(Boolean).length;
-    return depth === 0 ? "." : Array(depth).fill("..").join("/");
-}
-
 async function loadDevlog() {
     const container = document.querySelector("#devlog");
 
@@ -11,17 +6,16 @@ async function loadDevlog() {
     }
 
     const project = container.dataset.project;
-    const basePath = getDataBasePath();
 
     let entries = [];
 
     if (project === "latest") {
         // load the latest devlog entry from all projects
-        entries = await loadLatestDevlog(basePath);
+        entries = await loadLatestDevlog();
     } else if (project && project !== "all") {
-        entries = await loadProjectDevlog(project, basePath);
+        entries = await loadProjectDevlog(project);
     } else {
-        entries = await loadAllDevlogs(basePath);
+        entries = await loadAllDevlogs();
     }
 
     entries.sort((a, b) => {
@@ -34,8 +28,8 @@ async function loadDevlog() {
     renderDevlog(container, entries);
 }
 
-async function loadLatestDevlog(basePath = getDataBasePath()) {
-    const entries = await loadAllDevlogs(basePath);
+async function loadLatestDevlog() {
+    const entries = await loadAllDevlogs();
 
     if (!entries.length) {
         return [];
@@ -59,13 +53,13 @@ async function loadLatestDevlogSection() {
         return;
     }
 
-    const entries = await loadLatestDevlog(getDataBasePath());
+    const entries = await loadLatestDevlog();
     renderDevlog(container, entries);
 }
 
-async function loadProjectDevlog(project, basePath = getDataBasePath()) {
+async function loadProjectDevlog(project) {
     try {
-        const response = await fetch(`${basePath}/data/devlogs/${project}.json`);
+        const response = await fetch(`/data/devlogs/${project}.json`);
 
         if (!response.ok) {
             return [];
@@ -82,12 +76,12 @@ async function loadProjectDevlog(project, basePath = getDataBasePath()) {
     }
 }
 
-async function loadAllDevlogs(basePath = getDataBasePath()) {
-    const response = await fetch(`${basePath}/data/projects.json`);
+async function loadAllDevlogs() {
+    const response = await fetch('/data/projects.json');
     const projects = await response.json();
 
     const devlogs = await Promise.all(
-        projects.map(project => loadProjectDevlog(project.id, basePath))
+        projects.map(project => loadProjectDevlog(project.id))
     );
 
     return devlogs.flat();
@@ -105,7 +99,7 @@ function resolveDevlogImageSrc(entry, imageSrc) {
 
     // Relative paths in JSON (for example "photos/x.jpg") are project-scoped.
     if (entry?.project) {
-        return `${getDataBasePath()}/projects/${entry.project}/${imageSrc}`;
+        return `/projects/${entry.project}/${imageSrc}`;
     }
 
     return imageSrc;
@@ -123,7 +117,7 @@ function renderDevlog(container, entries) {
                 ? `<time datetime="${entry.date}">${entry.date}</time>`
                 : ""
             }
-            <h3>${entry.project ? `<a href="${getDataBasePath()}/projects/${entry.project}/">${entry.project}</a>` : "General"}</h3>
+            <h3>${entry.project ? `<a href="/projects/${entry.project}/">${entry.project}</a>` : "General"}</h3>
             <h4>${entry.title}</h4>
 
             ${entry.items

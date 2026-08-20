@@ -39,5 +39,20 @@
             "It still works, yay!"
         ],
         "images": []
+    },
+    {
+        "title": "Heading nightmare",
+        "date": "2026-08-20",
+        "createdAt": "2026-08-20T07:00:00Z",
+        "order": 1,
+        "version": "1.0.2",
+        "items": [
+            "I finally got some time to do more things with this project.",
+            "Then I realised I don't so  I managed the h1 sizes at least.",
+            "Still thinking about the style that I want to go with.",
+            "I need to draw icons as well!",
+            "But thats it for now, I have finals in few days so I need to focus on that first."
+        ],
+        "images": []
     }
 ]

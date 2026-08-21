@@ -17,6 +17,3 @@ Currently kept simple:
 Source code is available under the MIT License.
 
 Unless otherwise stated, written content, photographs, artwork, and other personal content are © Jesse Sadowý. All rights reserved.
-
-
-// sun colour #e0e0e0

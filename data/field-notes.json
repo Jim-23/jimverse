@@ -1,0 +1,15 @@
+[
+    {
+        "date": "2026-08-21",
+        "title": "I lost an ESP32",
+        "content": [
+            "Somewhere between cleaning my desk at work and arranging monitors, one of my ESP32 boards disappeared.",
+            "I looked everywhere. Nothing.",
+            "The ESP32 has officially entered another dimension.",
+            "And the worst thing is that it was one of the new ESP32 S3 and it has been already uploaded with Monbit version!",
+            "I just realised that I noticed it is gone on Monday. Since then, nothing new."
+        ],
+        "tags": ["hardware", "esp32"],
+        "image": ""
+    }
+]

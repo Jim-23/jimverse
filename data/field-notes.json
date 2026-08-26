@@ -11,5 +11,17 @@
         ],
         "tags": ["hardware", "esp32"],
         "image": ""
+    },
+    {
+        "date": "2026-08-26",
+        "title": "I found an ESP32",
+        "content": [
+            "The ESP32 miraculously emerged from the another dimension - it was under one of the monitor!",
+            "I was very surprised. I moved my monitor a bit to adjust its postition and then I noticed there is something under it. What a pleasant surprise when I took it out and it was the ESP!",
+            "Of course I was looking everywhere at desk and I assumed it fell into the bin but no. It was under the monitor the whole time.",
+            "Silly me..."
+        ],
+        "tags": ["hardware", "esp32"],
+        "image": ""
     }
 ]

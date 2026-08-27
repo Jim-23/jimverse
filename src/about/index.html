@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About</title>
+    <meta name="description" content="Something little about me">
+
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+
+        const theme =
+            savedTheme === "light" || savedTheme === "dark"
+                ? savedTheme
+                : window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=20260819">
+    <script src="/assets/js/components.js" defer></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <main>
+        <section>
+            <h1>About</h1>
+            <p>Something about me will be here when I get to it.</p>
+        </section>
+        <section>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+</body>
+</html>

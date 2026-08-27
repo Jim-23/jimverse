@@ -1,0 +1,22 @@
+{
+  "name": "jimverse",
+  "version": "1.0.0",
+  "description": "Source code for [jimverse.dev].",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "serve dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jim-23/jimverse.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Jim-23/jimverse/issues"
+  },
+  "homepage": "https://github.com/Jim-23/jimverse#readme",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}

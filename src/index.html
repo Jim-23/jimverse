@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home</title>
+    <meta name="description" content="Jimverse - projects, devlogs, experiments, and things I build (or break).">
+
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+
+        const theme =
+            savedTheme === "light" || savedTheme === "dark"
+                ? savedTheme
+                : window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=20260819">
+    <script src="/assets/js/projects.js" defer></script>
+    <script src="/assets/js/devlog.js" defer></script>
+    <script src="/assets/js/components.js" defer></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <main>
+        <section>
+            <h1>Welcome to the Jimverse</h1>
+            <p>
+                My internet corner for software, hardware, experiments, and whatever else I decide to build (or break).
+            </p>
+        </section>
+
+        <section>
+            <h2>Currently exploring</h2>
+            <div id="current-projects"></div>
+
+            <a href="/projects/">View all</a>
+        </section>
+
+        <section>
+            <h2>Latest from the devlogs</h2>
+            <div id="latest-devlog"></div>
+
+            <a href="/devlog/">View all</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+</body>
+</html>

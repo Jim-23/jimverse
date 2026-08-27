@@ -41,42 +41,4 @@ async function loadAboutProject() {
 
 }
 
-async function loadProjects() {
-    const container = document.querySelector("#current-projects");
-
-    if (!container) {
-        return;
-    }
-
-    const basePath = getDataBasePath();
-    const response = await fetch(`${basePath}/data/projects.json`);
-    const projects = await response.json();
-
-    const filterMode = container.dataset.filter || "active";
-    const visibleProjects = filterMode === "all"
-        ? projects
-        : projects.filter(project => project.status === "active");
-
-    container.innerHTML = visibleProjects.map(project => {
-        const href = project.url.startsWith("/")
-            ? `${basePath}${project.url}`
-            : `${basePath}/${project.url}`;
-
-        return `
-            <article>
-                <h3>
-                    <a href="${href}">
-                        ${project.name}
-                    </a>
-                </h3>
-
-                <p>${project.description}</p>
-                <p>Status: ${project.status}</p>
-                <p>Repository: <a href="${project.repository}">${project.repository}</a></p>
-            </article>
-        `;
-    }).join("");
-}
-
-loadProjects();
 loadAboutProject();

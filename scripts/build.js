@@ -273,30 +273,47 @@ function getDevlogEntries(project) {
 // PROJECT CARDS RELATED
 
 function generateProjectCards(filterMode = "active") {
-    const visibleProjects = filterMode === "all" ? projects : projects.filter(project => project.status === "active");
+    const visibleProjects =
+        filterMode === "all"
+            ? projects
+            : projects.filter(
+                project => project.status === "active"
+            );
 
     return visibleProjects.map(project => `
-        <article>
-            <h3>
-                <a href="${project.url}">
-                    ${project.name}
-                </a>
-            </h3>
+        <article class="project-card">
+            <img
+                class="project-image"
+                src="${project.image}"
+                alt=""
+            >
 
-            <p>${project.description}</p>
+            <div class="project-content">
+                <h3>
+                    <a href="${project.url}">
+                        ${project.name}
+                    </a>
+                </h3>
 
-            <p>Status: ${project.status}</p>
+                <p>${project.description}</p>
 
-            <p>
-                Repository:
-                <a href="${project.repository}">
-                    ${project.repository}
-                </a>
-            </p>
+                <p>
+                    Status: 
+                    <span class="project-status">
+                        ${project.status}
+                    </span>
+                </p>
+
+                <p>
+                    Repository:
+                    <a href="${project.repository}">
+                        ${project.repository}
+                    </a>
+                </p>
+            </div>
         </article>
     `).join("");
 }
-
 // FILE AND DIRECTORY PROCESSING RELATED
 
 async function copyDirectory(source, destination) {

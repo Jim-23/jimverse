@@ -305,6 +305,45 @@ p {
     color: var(--muted);
 }
 
+/* ========== Project card ========== */
+
+.project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.project-image {
+    flex: 0 0 80px;
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--surface-soft);
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-status {
+    display: inline-block;
+
+    padding: 3px 8px;
+
+    border-radius: 999px;
+
+    background: var(--surface-soft);
+    color: var(--accent);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
 
 
 /* ========== Cards ========== */
@@ -333,6 +372,31 @@ article {
     border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--surface-soft);
+}
+
+.view-all {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: 8px;
+
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.view-all:hover {
+    color: var(--text);
+    transform: translateX(4px);
+}
+
+.view-all:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 /* ========== Field Notes ========== */
@@ -466,4 +530,8 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
+    .project-card {
+        flex-direction: column;
+    }
 }
+

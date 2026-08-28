@@ -6,7 +6,8 @@
         "status": "active",
         "about": "Monbit is a personal project created to learn embedded development, hardware prototyping, and product design. The goal is not only to create a device, but also to explore the full product development process. From firmware and electronics to CAD design and physical prototype.",
         "url": "/projects/monbit/",
-        "repository": "https://github.com/Jim-23/monbit"
+        "repository": "https://github.com/Jim-23/monbit",
+        "image": "/assets/icons/projects/project.png"
     },
     {
         "id": "pyiconlaser",
@@ -15,7 +16,8 @@
         "status": "stable",
         "about": "This project started from a real production need: integrating a TYKMA laser marking system into a Python workflow. Instead of repeatedly working with the HTTP/TCPIP and it's quirks, I wanted to create a clean, reusable Python library that could also be useful for similar integrations in the future.",
         "url": "/projects/pyiconlaser/",
-        "repository": "https://github.com/Jim-23/pyiconlaser"
+        "repository": "https://github.com/Jim-23/pyiconlaser",
+        "image": "/assets/icons/projects/project.png"
     },
     {
         "id": "jimverse-web",
@@ -24,6 +26,7 @@
         "status": "active",
         "about": "I have decided that it's time to have a website. As a software developer, I think it's necessery and it has been a fun so far! :)",
         "url": "/projects/jimverse-web",
-        "repository": "https://github.com/Jim-23/jimverse"
+        "repository": "https://github.com/Jim-23/jimverse",
+        "image": "/assets/icons/projects/project.png"
     }
 ]

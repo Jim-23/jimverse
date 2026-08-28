@@ -369,6 +369,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    margin-bottom: 10px;
 }
 
 .project-image {
@@ -406,7 +407,9 @@ p {
 
 /* ========== Cards ========== */
 article {
+    position: relative;
     padding: 20px;
+    margin-bottom: 10px;
 
     background: var(--surface);
     border: 1px solid var(--border);
@@ -462,31 +465,30 @@ article {
 .field-note {
     position: relative;
 
-    padding: 24px;
+    padding: 20px;
+    margin-bottom: 10px;
 
     background: var(--surface-soft);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 5%);
 }
 
-.field-note h3 {
-    margin-bottom: 4px;
+.field-note-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-.field-note time {
-    display: block;
-    margin-bottom: 16px;
+.field-note-header h3 {
+    margin: 0;
+}
 
+.field-note-header time {
     color: var(--muted);
-    font-size: 0.85rem;
-}
-
-.field-note p {
-    margin: 0 0 12px;
-}
-
-.field-note p:last-of-type {
-    margin-bottom: 0;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
 .field-note-tags {
@@ -590,6 +592,11 @@ footer {
     }
     .project-card {
         flex-direction: column;
+    }
+    .field-note-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
     }
 }
 

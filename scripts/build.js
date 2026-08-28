@@ -28,7 +28,7 @@ fieldNotes.sort(
 function generateProjectNavLinks() {
     return projects.map(project => `
         <a href="${project.url}">
-            • ${project.name}
+            → ${project.name}
         </a>
     `).join("");
 }
@@ -68,13 +68,15 @@ function generateFieldNotes(entries) {
     return entries.map(entry => `
         <article class="field-note">
 
-            <h3>${entry.title}</h3>
+            <div class="field-note-header">
+                <h3>${entry.title}</h3>
 
-            ${
-                entry.date
-                    ? `<time datetime="${entry.date}">${entry.date}</time>`
-                    : ""
-            }
+                ${
+                    entry.date
+                        ? `<time datetime="${entry.date}">${entry.date}</time>`
+                        : ""
+                }
+            </div>
 
             ${
                 entry.content

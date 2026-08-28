@@ -236,10 +236,39 @@ section {
 /* ========== Footer ========== */
 
 footer {
+    width: min(100% - 32px, var(--content-width));
+    margin: 48px auto 0;
     padding: 24px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 
     border-top: 1px solid var(--border);
     color: var(--muted);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+footer a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 /* ========== Content ========== */
@@ -429,5 +458,12 @@ footer {
 @media (min-width: 701px) and (max-width: 980px) {
     .image-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

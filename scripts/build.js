@@ -6,15 +6,32 @@ const rootDir = process.cwd();
 const srcDir = path.join(rootDir, "src");
 const distDir = path.join(rootDir, "dist");
 
-const header = await fs.readFile(path.join(rootDir, "assets/components/header.html"), "utf-8");
-const footer = await fs.readFile(path.join(rootDir, "assets/components/footer.html"), "utf-8");
+const footer = await fs.readFile(path.join(rootDir, "src/components/footer.html"), "utf-8");
 
 const projects = JSON.parse(await fs.readFile(path.join(rootDir, "data/projects.json"), "utf-8"));
 const fieldNotes = JSON.parse(await fs.readFile(path.join(rootDir, "data/field-notes.json"), "utf-8"));
 
+let header = await fs.readFile(
+    path.join(rootDir, "src/components/header.html"),
+    "utf8"
+);
+
+header = header.replace(
+    "<!-- PROJECT LINKS -->",
+    generateProjectNavLinks()
+);
+
 fieldNotes.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
 );
+
+function generateProjectNavLinks() {
+    return projects.map(project => `
+        <a href="${project.url}">
+            • ${project.name}
+        </a>
+    `).join("");
+}
 
 function generateAboutProject(projectId) {
     const projectData = projects.find(

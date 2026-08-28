@@ -95,8 +95,9 @@
         "items": [
             "I have finished the last bit that was causing the glitching - project details.",
             "Now everything is build at the beginning and Nginx points to the 'dist' folder where is a new html generated with all it's necessary stuff.",
-            "I am still unsure if that is the best approach. I might eventually need to use some kind of framework. However for now, it works well."
-
+            "I am still unsure if that is the best approach. I might eventually need to use some kind of framework. However for now, it works well.",
+            "The styling of the header and footer has been improved (I hope).",
+            "I have also added a dropdown menu for projects and icons to projects (curently same for all of them. I would like to create my own in the future."
         ],
         "images": []
     }

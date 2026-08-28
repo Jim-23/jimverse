@@ -70,18 +70,32 @@
     {
         "title": "Introducing NodeJS cuz the glitching was devastating.",
         "date": "2026-08-27",
-        "createdAt": "2026-08-28T015:00:00Z",
+        "createdAt": "2026-08-27T015:00:00Z",
         "order": 1,
         "version": "1.0.4",
         "items": [
             "I re-did, re-wrote and re-designed a few things.",
-            "I spent an our deciding which font to use, I am still unsure about the current one.",
+            "I spent an hour deciding which font to use, I am still unsure about the current one.",
             "There should not be any glitches anymore. (noticed only few within selected projects)",
             "The NodeJS had to step in and it builds the web before it's being accesible.",
             "Majority of the parts are now loaded upon building the website so it should not affect the visual aspects. ^.^",
             "Still need to fix few things, but it's a progress!",
-            "Oh and as my dear friend suggested, the # should be clickable so user can filter based on them.",
-            "Actually I am thinking of adding a filtering system based on date, project type, hasthags etc, not only the #"
+            "Oh and as my dear friend suggested, the '#' should be clickable so user can filter based on them.",
+            "Actually I am thinking of adding a filtering system based on date, project type, hasthags etc."
+
+        ],
+        "images": []
+    },
+    {
+        "title": "Final touches for less glitches",
+        "date": "2026-08-28",
+        "createdAt": "2026-08-28T007:00:00Z",
+        "order": 1,
+        "version": "1.0.4",
+        "items": [
+            "I have finished the last bit that was causing the glitching - project details.",
+            "Now everything is build at the beginning and Nginx points to the 'dist' folder where is a new html generated with all it's necessary stuff.",
+            "I am still unsure if that is the best approach. I might eventually need to use some kind of framework. However for now, it works well."
 
         ],
         "images": []

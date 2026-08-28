@@ -16,6 +16,33 @@ fieldNotes.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
 );
 
+function generateAboutProject(projectId) {
+    const projectData = projects.find(
+        project => project.id === projectId
+    );
+
+    if (!projectData) {
+        return "";
+    }
+
+    return `
+        <h2>${projectData.name}</h2>
+
+        <h3>${projectData.description}</h3>
+
+        <p>Status: ${projectData.status}</p>
+
+        <p>${projectData.about}</p>
+
+        <p>
+            Repository:
+            <a href="${projectData.repository}">
+                ${projectData.repository}
+            </a>
+        </p>
+    `;
+}
+
 function generateFieldNotes(entries) {
     if (!entries.length) {
         return "<p>No field notes available.</p>";
@@ -365,6 +392,19 @@ async function processDirectory(currentDir) {
                                 ${generateFieldNotes(fieldNotes)}
                             </div>
                         `
+                    )
+                    .replace(
+                        /<div id="about-project"([^>]*)><\/div>/,
+                        (match, attributes) => {
+                            const projectMatch =
+                                attributes.match(/data-project="([^"]+)"/);
+
+                            const projectId = projectMatch?.[1];
+
+                            return `<div id="about-project"${attributes}>
+                                ${generateAboutProject(projectId)}
+                            </div>`;
+                        }
                     );
 
                 await fs.writeFile(

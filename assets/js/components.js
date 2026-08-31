@@ -55,4 +55,30 @@ function initThemeToggle() {
     });
 }
 
+function initImageExpand() {
+    document.addEventListener("click", (event) => {
+        if (!event.target.matches(".image-grid img")) {
+            document
+                .querySelectorAll(".image-grid img.expanded")
+                .forEach(img => img.classList.remove("expanded"));
+
+            return;
+        }
+
+        const image = event.target;
+        const wasExpanded = image.classList.contains("expanded");
+
+        // Close any currently expanded image
+        document
+            .querySelectorAll(".image-grid img.expanded")
+            .forEach(img => img.classList.remove("expanded"));
+
+        // Expand the clicked image if it wasn't already expanded
+        if (!wasExpanded) {
+            image.classList.add("expanded");
+        }
+    });
+}
+
 initThemeToggle();
+initImageExpand();

@@ -101,5 +101,25 @@
             "I made a small space between the different logs/projects/cards and editet style to Field Notes so it's almost the same but different, also the date has been moved to the right."
         ],
         "images": []
+    },
+    {
+        "title": "Somtehing like icon",
+        "date": "2026-08-31",
+        "createdAt": "2026-08-31T007:00:00Z",
+        "order": 1,
+        "version": "1.0.4",
+        "items": [
+            "During the weekend I have decided to try and 'draw' an icon.",
+            "I was hoping to make something nice and simple.",
+            "The result is not the best, I am not good and pixelart lol. It'S just a purple planet-like object, or blob.",
+            "I might change it in a future but it will do for now.",
+            "Also, now you can click on an image to expand it. Click again and it will go back to the default position."
+        ],
+        "images": [
+            {
+                "src": "/assets/icons/main-icon.png",
+                "alt": "There should be a logo."
+            }
+        ]
     }
 ]

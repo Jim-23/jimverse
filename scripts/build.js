@@ -66,7 +66,10 @@ function generateFieldNotes(entries) {
     }
 
     return entries.map(entry => `
-        <article class="field-note">
+        <article
+            class="field-note"
+            data-tags="${entry.tags?.join(",") || ""}"
+        >
 
             <div class="field-note-header">
                 <h3>${entry.title}</h3>
@@ -92,8 +95,15 @@ function generateFieldNotes(entries) {
                         <div class="field-note-tags">
                             ${
                                 entry.tags
-                                    .map(tag => `<span class="tag">#${tag}</span>`)
-                                    .join("")
+                                    .map(tag => `
+                                        <button
+                                            class="tag"
+                                            data-tag="${tag}"
+                                            type="button"
+                                        >
+                                            #${tag}
+                                        </button>
+                                    `).join("")
                             }
                         </div>
                     `
@@ -427,6 +437,10 @@ async function processDirectory(currentDir) {
                             <div id="field-notes"${attributes}>
                                 ${generateFieldNotes(fieldNotes)}
                             </div>
+
+                            <script id="field-notes-data" type="application/json">
+                                ${JSON.stringify(fieldNotes)}
+                            </script>
                         `
                     )
                     .replace(
@@ -467,4 +481,5 @@ await processDirectory(srcDir);
 
 await copyDirectory(path.join(rootDir, "assets"), path.join(distDir, "assets"));
 await copyDirectory(path.join(rootDir, "data"), path.join(distDir, "data"));
+
 console.log("Build complete");

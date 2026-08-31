@@ -527,8 +527,21 @@ article {
     border: 1px solid var(--border);
     border-radius: 999px;
 
+    font: inherit;
     font-size: 0.8rem;
     font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.field-note .tag:hover {
+    border-color: var(--accent);
+    color: var(--text);
 }
 
 .field-note > img {

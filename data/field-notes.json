@@ -21,7 +21,7 @@
             "Of course I was looking everywhere at desk and I assumed it fell into the bin but no. It was under the monitor the whole time.",
             "Silly me..."
         ],
-        "tags": ["hardware", "esp32"],
+        "tags": ["filter-test", "esp32"],
         "image": ""
     }
 ]

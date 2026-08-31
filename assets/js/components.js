@@ -80,5 +80,27 @@ function initImageExpand() {
     });
 }
 
+function initTagClick() {
+    document.addEventListener("click", (event) => {
+        if (!event.target.matches(".tag")) {
+            return;
+        }
+
+        const tagValue = event.target.dataset.tag;
+
+        document
+            .querySelectorAll(".field-note")
+            .forEach(note => {
+                const tags = note.dataset.tags.split(",");
+
+                note.style.display =
+                    tags.includes(tagValue)
+                        ? ""
+                        : "none";
+            });
+    });
+}
+
 initThemeToggle();
 initImageExpand();
+initTagClick();

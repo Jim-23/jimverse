@@ -107,7 +107,7 @@
         "date": "2026-08-31",
         "createdAt": "2026-08-31T007:00:00Z",
         "order": 1,
-        "version": "1.0.4",
+        "version": "1.0.5",
         "items": [
             "During the weekend I have decided to try and 'draw' an icon.",
             "I was hoping to make something nice and simple.",
@@ -129,7 +129,7 @@
         "order": 2,
         "version": "1.0.5",
         "items": [
-            "I think it's time for a new version. v1.0.5",
+            "I think it's time for a new version release - v1.0.5",
             "After playing with the image resizing, I have decided to add tag filtering for FieldNotes",
             "You just click on a tag that you want to see and you should see all FieldNotes that have that tag.",
             "It's not major feature and I would like to add View All option so you don't have to reload the field notes."

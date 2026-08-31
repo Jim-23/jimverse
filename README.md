@@ -6,11 +6,12 @@ My internet corner for projects, experiments, devlogs, and whatever else I happe
 
 ## Stack
 
-Currently kept simple:
+Kept simple:
 
 - HTML
 - CSS
 - JavaScript
+- NodeJS for init build of the web
 
 ## License
 

@@ -366,5 +366,26 @@
             }
         ],
         "images": []
+    },
+    {
+        "title": "Monbit Weekend progress",
+        "date": "2026-09-12",
+        "items": [
+            "It's quite interesting that I managed to fully work on Monbit after exactly 1 month (still shame on me -_-)",
+            "I've managed to fully switch to the new board ESP32-S3",
+            "The biggest struggle was to actualy upload it (I could not connect to it, I had to hold the boot button, then connect the USB and then upload FW) and of course cable management",
+            "I've connected all the peripherals and it works (so far).",
+            "Lastly, I have connected the battery but I would like to implement a small circuit that would allow me to read the battery level."
+        ],
+        "images": [
+            {
+                "src": "photos/esp_s3_connected.jpg",
+                "alt": "ESP32-S3 is alive!"
+            },
+            {
+                "src": "photos/battery_connected.jpg",
+                "alt": "Battery connection"
+            }
+        ]
     }
 ]

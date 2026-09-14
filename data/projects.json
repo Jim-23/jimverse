@@ -4,7 +4,7 @@
         "name": "Monbit",
         "description": "A tiny e-ink Tamagotchi-like device built around an ESP32.",
         "status": "active",
-        "about": "Monbit is a personal project created to learn embedded development, hardware prototyping, and product design. The goal is not only to create a device, but also to explore the full product development process. From firmware and electronics to CAD design and physical prototype.",
+        "about": "Monbit is a personal project created to learn embedded development, hardware prototyping, and product design. The goal is to explore the full product development process. From firmware and electronics to CAD design and the final prototype.",
         "url": "/projects/monbit/",
         "repository": "https://github.com/Jim-23/monbit",
         "image": "/assets/icons/projects/project.png"

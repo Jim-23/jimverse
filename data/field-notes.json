@@ -23,5 +23,34 @@
         ],
         "tags": ["filter-test", "esp32"],
         "image": ""
+    },
+    {
+        "date": "2026-10-09",
+        "title": "What I am working on",
+        "content": [
+            "Right now I am focusing on my studies, again, so there has not been much time to work on my ongoing projects.",
+            "But when I have some time, I am working on a simple Attendance app. I won't be posting it as a separate project because I am building it mostly with Claude.",
+            "It's not a project which I really want to do, it just happens to be quite a necassary because I am moving in December to new City and I will be mostly working remotely.",
+            "Thus I have decided to 'build' this, so I can have a nice overview of my working hours, holidays, overtimes etc + I can export it to Excel and send it to HR so they know my work hours.",
+            "It's not anything fancy, just a simple project and once again I don't want to take the credit for it, because I heavily used AI for it.",
+            "It has one benefit though. It took me about one week to finish and I was 'working on it' only for one weekend + few hours during the week.",
+            "I have decided that I want to use Vercel for 'hosting' it and Supabase as database entry because I want it to be accesible to more users if needed and I don't want to pay for another domain",
+            "Bellow are some screenshots of it and you can check the blob on my git: https://github.com/Jim-23/attendance-app"
+        ],
+        "tags": ["attendance-app", "ai-slop"],
+        "image": [
+            {
+                "src": "photos/attendance-app_overview.png",
+                "alt": "Attendance App - Overview"
+            },
+            {
+                "src": "photos/attendance-app_stats.png",
+                "alt": "Attendance App - Stats"
+            },
+            {
+                "src": "photos/attendance-app_holidays.png",
+                "alt": "Attendance App - Holidays"
+            }
+        ]
     }
 ]

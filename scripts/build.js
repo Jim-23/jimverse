@@ -111,9 +111,23 @@ function generateFieldNotes(entries) {
             }
 
             ${
-                entry.image
-                    ? `<img src="${entry.image}" alt="${entry.title}">`
-                    : ""
+                Array.isArray(entry.image)
+                    ? `
+                        <div class="image-grid">
+                            ${entry.image
+                                .map(image => `
+                                    <img
+                                        src="${image.src}"
+                                        alt="${image.alt || entry.title}"
+                                        loading="lazy"
+                                    >
+                                `)
+                                .join("")}
+                        </div>
+                    `
+                    : entry.image
+                        ? `<img src="${entry.image}" alt="${entry.title}">`
+                        : ""
             }
 
         </article>

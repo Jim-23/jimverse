@@ -127,6 +127,10 @@
     line-height: 1.7;
 }
 
+.artalk .atk-comment > .atk-main > .atk-body > .atk-content p {
+    color: inherit;
+}
+
 .artalk .atk-comment > .atk-main > .atk-footer .atk-actions {
     color: var(--muted);
     transition: color 0.2s ease;

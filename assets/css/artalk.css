@@ -85,3 +85,24 @@
 .artalk .atk-main-editor .atk-send-btn:hover {
     opacity: 0.85;
 }
+
+/* ========== Editor Spacing ========== */
+
+.artalk .atk-main-editor {
+    margin-top: 24px;
+    margin-bottom: 28px;
+}
+
+.artalk .atk-main-editor .atk-editor {
+    padding: 12px;
+}
+
+.artalk .atk-main-editor input {
+    min-width: 0;
+    padding: 10px 12px !important;
+}
+
+.artalk .atk-main-editor textarea {
+    padding: 12px !important;
+    min-height: 130px;
+}

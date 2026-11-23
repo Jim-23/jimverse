@@ -37,7 +37,7 @@
             "I have decided that I want to use Vercel for 'hosting' it and Supabase as database entry because I want it to be accesible to more users if needed and I don't want to pay for another domain",
             "Bellow are some screenshots of it and you can check the blob on my git: https://github.com/Jim-23/attendance-app"
         ],
-        "tags": ["attendance-app", "ai-slop"],
+        "tags": ["attendance-app", "ai-slop", "life-update"],
         "image": [
             {
                 "src": "photos/attendance-app_overview.png",
@@ -52,5 +52,43 @@
                 "alt": "Attendance App - Holidays"
             }
         ]
+    },
+    {
+        "date": "2026-11-23",
+        "title": "What I am working on",
+        "content": [
+            "I am still trying to study whenever I have free time, and then I usually spend the rest of the evening playing some games and talking to my friends on Discord. (Yes, I have friends! xD). There isn't much time for personal projects, and there won't be until February because I have my exams during the last week of January 2027.",
+            "On top of that, I am moving out this Saturday, so there is some packing to do. This also means that I am starting to work remotely next week, with commuting to work probably twice that week. I am kinda scared of it because the total travel time is around 2 hours, so that would be 4 hours of travelling + 8.5 hours of work. The rest of the time is for other stuff and sleeping, which isn't much.",
+            "On another note, I am a big fan of e-ink displays, and since I recently sold my Boox Palma 1, I was on the hunt for a new e-reader. I wanted something light, not Android-based, with physical buttons (a plus), and ideally something cheap with a colour display.",
+            "Of course, I did a lot of research, watched tons of comparison videos, and the only one that met my criteria was the PocketBook Verse Pro Color (the price was the main thing that made me consider it, and I also like that it's from Europe). After purchasing and trying it, I had to return it. I was very disappointed with the system speed (even with the Koreader installed). I liked the size and buttons, but that's probably it. I also encountered a few unexpected restarts while reading and battery drainage overnight. The software seems not to be optimised very well at all. So here I am, hunting again.",
+            "So the research continues. There weren't many options left. There was the Kobo Clara Colour, Kindle (they just released the 2026 Colorsoft version), and a few other brands. Now I am very happy that I went with Kobo!",
+            "Kobo is smooth (compared to PocketBook, it's a Flash! xD), lightweight, pretty, has physical buttons, and is simple. The only downside for me is that if you turn off the frontlight, it's quite dark, which wasn't the case with the PocketBook (or at least not that much), but it's a minor thing. You can still set the frontlight to 5%, and it's perfect.",
+            "During my hunt for the main colour e-reader, I came across a mini e-reader, and yeah, I hit the buy button. It was a bit impulsive, to be honest, but I am glad I did it. It's the XTEINK X4 Classic – no frontlight, no touch, just a small e-reader that I now carry everywhere.",
+            "I don't think it's life-changing because I need to get used to taking it out of my pocket instead of my phone, which is sometimes harder than you would think. But I hope I will get there. Anyway, below are a few pictures of all three devices."
+        ],
+        "tags": ["life-update", "moving", "e-ink", "e-reader"],
+        "image": [
+            {
+                "src": "photos/pocketbook-verse-pro-color.jpg",
+                "alt": "PocketBook Verse Pro Color"
+            },
+            {
+                "src": "photos/kobo-libra-colour.jpg",
+                "alt": "Kobo Libra Colour - main page"
+            },
+            {
+                "src": "photos/kobo-libra-colour-2.jpg",
+                "alt": "Kobo Libra Colour - settings"
+            },
+            {
+                "src": "photos/xteink-x4-classic.jpg",
+                "alt": "XTEINK X4 Classic"
+            },
+            {
+                "src": "photos/xteink-vs-kobo-no-frontlight.jpg",
+                "alt": "XTEINK vs Kobo with frontlight off"
+            }
+        ]
     }
+
 ]

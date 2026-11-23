@@ -1,0 +1,87 @@
+/* ========== Artalk Theme ========== */
+
+.artalk {
+    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
+    color: var(--text);
+}
+
+.artalk a {
+    color: var(--accent);
+}
+
+.artalk button,
+.artalk input,
+.artalk textarea {
+    font-family: inherit;
+}
+
+/* ========== Artalk Typography ========== */
+
+.artalk {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.artalk .atk-text,
+.artalk .atk-content,
+.artalk .atk-comment,
+.artalk .atk-editor {
+    color: var(--text);
+    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
+}
+
+.artalk .atk-muted {
+    color: var(--muted);
+}
+
+.artalk a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.artalk a:hover {
+    color: var(--text);
+}
+
+/* ========== Comment Form ========== */
+
+.artalk .atk-main-editor input,
+.artalk .atk-main-editor textarea {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.artalk .atk-main-editor input::placeholder,
+.artalk .atk-main-editor textarea::placeholder {
+    color: var(--muted);
+}
+
+.artalk .atk-main-editor input:focus,
+.artalk .atk-main-editor textarea:focus {
+    outline: none;
+    border-color: var(--accent) !important;
+}
+
+.artalk .atk-main-editor .atk-textarea {
+    min-height: 120px;
+}
+
+.artalk .atk-main-editor .atk-send-btn {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 8px 20px;
+    font-family: inherit;
+    font-weight: 700;
+    transition: opacity 0.2s ease;
+}
+
+.artalk .atk-main-editor .atk-send-btn:hover {
+    opacity: 0.85;
+}

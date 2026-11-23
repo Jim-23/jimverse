@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
             pageKey: element.dataset.pageKey,
             pageTitle: element.dataset.pageTitle,
             server: "https://comments.jimverse.dev",
-            site: "Jimverse"
+            site: "Jimverse",
+            darkMode: document.documentElement.dataset.theme === "dark",
         });
     });
 });

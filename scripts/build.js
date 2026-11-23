@@ -60,7 +60,17 @@ function generateAboutProject(projectId) {
     `;
 }
 
-function generateFieldNotes(entries) {
+function getFieldnotePageKey(entry) {
+    const identifier = entry.createdAt || [
+        entry.date || "undated",
+        entry.order ?? "no-order",
+        entry.version || "no-version"
+    ].join("-");
+
+    return `fieldnotes/${entry.project || "general"}/${identifier}`;
+}
+
+function generateFieldNotes(entries, includeComments = false) {
     if (!entries.length) {
         return "<p>No field notes available.</p>";
     }
@@ -129,7 +139,19 @@ function generateFieldNotes(entries) {
                         ? `<img src="${entry.image}" alt="${entry.title}">`
                         : ""
             }
-
+            ${
+                includeComments
+                    ? `
+                        <section class="fieldnotes-comments">
+                            <div
+                                class="artalk-comments"
+                                data-page-key="${getFieldnotePageKey(entry)}"
+                                data-page-title="${entry.title}"
+                            ></div>
+                        </section>
+                    `
+                    : ""
+            }
         </article>
     `).join("");
 }
@@ -473,7 +495,7 @@ async function processDirectory(currentDir) {
                         /<div id="field-notes"([^>]*)><\/div>/,
                         (match, attributes) => `
                             <div id="field-notes"${attributes}>
-                                ${generateFieldNotes(fieldNotes)}
+                                ${generateFieldNotes(fieldNotes, true)}
                             </div>
 
                             <script id="field-notes-data" type="application/json">

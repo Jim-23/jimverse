@@ -1,37 +1,26 @@
 /* ========== Artalk Theme ========== */
 
-.artalk {
-    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
+.artalk,
+.atk-layer-wrap {
+    --at-color-font: var(--text);
+    --at-color-deep: var(--text);
+    --at-color-sub: var(--muted);
+    --at-color-grey: var(--muted);
+    --at-color-meta: var(--muted);
+    --at-color-border: var(--border);
+    --at-color-light: var(--accent);
+    --at-color-bg: var(--surface);
+    --at-color-bg-transl: var(--surface);
+    --at-color-bg-grey: var(--surface-soft);
+    --at-color-bg-grey-transl: var(--surface-soft);
+    --at-color-bg-light: var(--surface-soft);
+    --at-color-main: var(--accent);
+    --at-color-gradient: linear-gradient(180deg, transparent, var(--surface));
+
     color: var(--text);
-}
-
-.artalk a {
-    color: var(--accent);
-}
-
-.artalk button,
-.artalk input,
-.artalk textarea {
-    font-family: inherit;
-}
-
-/* ========== Artalk Typography ========== */
-
-.artalk {
+    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-.artalk .atk-text,
-.artalk .atk-content,
-.artalk .atk-comment,
-.artalk .atk-editor {
-    color: var(--text);
-    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
-}
-
-.artalk .atk-muted {
-    color: var(--muted);
 }
 
 .artalk a {
@@ -43,66 +32,92 @@
     color: var(--text);
 }
 
-/* ========== Comment Form ========== */
-
-.artalk .atk-main-editor input,
-.artalk .atk-main-editor textarea {
-    background: var(--surface) !important;
-    color: var(--text) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
-    font-family: 'Zen Maru Gothic', system-ui, sans-serif;
-    font-size: 0.95rem;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.artalk .atk-main-editor input::placeholder,
-.artalk .atk-main-editor textarea::placeholder {
-    color: var(--muted);
-}
-
-.artalk .atk-main-editor input:focus,
-.artalk .atk-main-editor textarea:focus {
-    outline: none;
-    border-color: var(--accent) !important;
-}
-
-.artalk .atk-main-editor .atk-textarea {
-    min-height: 120px;
-}
-
-.artalk .atk-main-editor .atk-send-btn {
-    background: var(--accent) !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 8px !important;
-    padding: 8px 20px;
+.artalk button,
+.artalk input,
+.artalk textarea {
     font-family: inherit;
-    font-weight: 700;
-    transition: opacity 0.2s ease;
 }
 
-.artalk .atk-main-editor .atk-send-btn:hover {
-    opacity: 0.85;
-}
-
-/* ========== Editor Spacing ========== */
+/* ========== Comment Form ========== */
 
 .artalk .atk-main-editor {
     margin-top: 24px;
     margin-bottom: 28px;
 }
 
-.artalk .atk-main-editor .atk-editor {
-    padding: 12px;
-}
-
-.artalk .atk-main-editor input {
+.artalk .atk-main-editor > .atk-header input {
     min-width: 0;
-    padding: 10px 12px !important;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.artalk .atk-main-editor textarea {
-    padding: 12px !important;
+.artalk .atk-main-editor > .atk-textarea-wrap > .atk-textarea {
     min-height: 130px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.artalk .atk-main-editor > .atk-header input::placeholder,
+.artalk .atk-main-editor > .atk-textarea-wrap > .atk-textarea::placeholder {
+    color: var(--muted);
+}
+
+.artalk .atk-main-editor > .atk-header input:focus,
+.artalk .atk-main-editor > .atk-textarea-wrap > .atk-textarea:focus {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.artalk .atk-main-editor > .atk-bottom .atk-send-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: opacity 0.2s ease;
+}
+
+.artalk .atk-main-editor > .atk-bottom .atk-send-btn:hover {
+    opacity: 0.85;
+}
+
+[data-theme="dark"] .artalk .atk-main-editor > .atk-bottom .atk-send-btn {
+    color: var(--bg);
+}
+
+/* ========== Comments ========== */
+
+.artalk .atk-comment > .atk-main > .atk-body > .atk-content {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.artalk .atk-comment > .atk-main > .atk-footer .atk-actions {
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.artalk .atk-comment > .atk-main > .atk-footer .atk-actions a,
+.artalk .atk-comment > .atk-main > .atk-footer .atk-actions button {
+    color: inherit;
+}
+
+.artalk .atk-comment > .atk-main > .atk-footer .atk-actions a:hover,
+.artalk .atk-comment > .atk-main > .atk-footer .atk-actions button:hover,
+.artalk .atk-comment > .atk-main > .atk-footer .atk-actions .is-active {
+    color: var(--accent);
 }

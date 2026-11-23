@@ -222,6 +222,16 @@ devlogEntries.sort(compareDevlogEntries);
 
 // MORE DEVLOGS HELPERS
 
+function getDevlogPageKey(entry) {
+    const identifier = entry.createdAt || [
+        entry.date || "undated",
+        entry.order ?? "no-order",
+        entry.version || "no-version"
+    ].join("-");
+
+    return `devlog/${entry.project || "general"}/${identifier}`;
+}
+
 function resolveDevlogImageSrc(entry, imageSrc) {
     if (!imageSrc) {
         return "";
@@ -242,7 +252,7 @@ function resolveDevlogImageSrc(entry, imageSrc) {
     return imageSrc;
 }
 
-function generateDevlogEntries(entries) {
+function generateDevlogEntries(entries, includeComments = false) {
     if (!entries.length) {
         return "<p>No entries yet.</p>";
     }
@@ -291,6 +301,19 @@ function generateDevlogEntries(entries) {
                                 `)
                                 .join("")}
                         </div>
+                    `
+                    : ""
+            }
+            ${
+                includeComments
+                    ? `
+                        <section class="devlog-comments">
+                            <div
+                                class="artalk-comments"
+                                data-page-key="${getDevlogPageKey(entry)}"
+                                data-page-title="${entry.title}"
+                            ></div>
+                        </section>
                     `
                     : ""
             }
@@ -432,7 +455,8 @@ async function processDirectory(currentDir) {
 
                             return `<div id="devlog"${attributes}>
                                 ${generateDevlogEntries(
-                                    getDevlogEntries(project)
+                                    getDevlogEntries(project),
+                                    true
                                 )}
                             </div>`;
                         }

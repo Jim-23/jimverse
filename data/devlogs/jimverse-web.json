@@ -135,5 +135,25 @@
             "It's not major feature and I would like to add View All option so you don't have to reload the field notes."
         ],
         "images": []
+    },
+    {
+        "title": "Comments are here!",
+        "date": "2026-11-23",
+        "createdAt": "2026-11-23T012:00:00Z",
+        "order": 1,
+        "version": "1.0.7",
+        "items": [
+            "I have decided to add here a comment section - specifically to FieldNotes and Devlogs. I wanted something simple but safe and anti spam protected.",
+            "After discussing with GPT and doing some research, I decided to go with Artalk. The setting up was very easy, it runs in a Docker on the Raspberry Pi. There is also a nice dashboard where you can manage the comments.",
+            "Anyone who wants to post a comment must provide an email adress with it. The email is not shared with anyone but the commenting system database.",
+            "So now you can share your insights with me ^^.",
+            "Don't forget to leave a comment!"
+        ],
+        "images": [
+            {
+                "src": "/photos/comments-artalk.png",
+                "alt": "Preview of the comment section"
+            }
+        ]
     }
 ]

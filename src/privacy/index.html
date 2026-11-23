@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy</title>
+    <meta name="description" content="Privacy information about comments on Jimverse.">
+
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+
+        const theme =
+            savedTheme === "light" || savedTheme === "dark"
+                ? savedTheme
+                : window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261123">
+    <script src="/assets/js/components.js" defer></script>
+
+    <link rel="shortcut icon" href="/assets/icons/main-icon.png">
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <main>
+        <section>
+            <h1>Privacy information</h1>
+            <h2>Comments</h2>
+            <p>
+                When you comment on Jimverse, you provide a nickname and email address.
+                Your comments and associated email address are stored on the self-hosted
+                Artalk server.
+            </p>
+            <p>
+                Your email address is not displayed publicly. It may be used to send you
+                notifications when someone replies to your comment.
+            </p>
+            <p>
+                To request deletion of a comment and its associated information, contact
+                me through my <a href="https://github.com/Jim-23">GitHub profile</a>.
+                Please identify the comment and page, but do not post your email address publicly.
+            </p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+</body>
+</html>
